@@ -15,8 +15,9 @@ genai.configure(api_key=GEMINI_API_KEY)
 TENOR_API_KEY = "AIzaSyDuN550ygThE8-A0nFuJGXcgM3eNVCwNW8"
 CKEY = "Anime"
 def home(request):
-    # Initialize dynamic_script.js
-    with open("static/dynamic_script.js", "w") as file:
+    file_path = os.path.join(settings.BASE_DIR, "static", "dynamic_script.js")
+
+    with open(file_path, "w") as file:
         file.write("// Dynamic JavaScript")
 
     return render(request, "index.html")
