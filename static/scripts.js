@@ -82,14 +82,17 @@ async function applyChanges() {
   }
 }
 
-document.getElementById("scrollToFooter").addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent default link behavior
-    document.getElementById("footer").scrollIntoView({
-      behavior: "smooth", // Enables smooth scrolling
-      block: "start", // Scrolls to the top of the footer section
-    });
-  });
+const scrollToFooter = document.getElementById("scrollToFooter");
 
+
+
+document.getElementById("scrollToFooter").addEventListener("click", function (e) {
+  e.preventDefault(); // Prevent default link behavior
+  document.getElementById("footer").scrollIntoView({
+    behavior: "smooth", // Enables smooth scrolling
+    block: "start", // Scrolls to the top of the footer section
+  });
+});
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault(); // Prevent default anchor behavior
