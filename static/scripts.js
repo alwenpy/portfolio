@@ -198,41 +198,85 @@ document
       }, 10); // Delay to ensure class toggle happens after visibility change
     }
   });
-  const scrollToFooterBtn = document.querySelector('#scrollToFooter');
-  const header = document.querySelector('#header');
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollToFooterBtn = document.querySelector('#scrollToFooter'); // Your button
+    const footer = document.querySelector('#footer'); // Your footer
+    const header = document.querySelector('#header'); // Your header
   
-  // Function to handle visibility based on screen size
-  function updateVisibility() {
-    if (window.innerWidth < 1024) {
-      scrollToFooterBtn.style.display = "none"; // Ensure it hides
-    } else {
-      scrollToFooterBtn.style.display = "flex"; // Default state
+    // Function to handle button visibility based on screen size
+    function updateVisibility() {
+      if (window.innerWidth < 1024) {
+        scrollToFooterBtn.style.display = "none"; // Hide on smaller screens
+      } else {
+        scrollToFooterBtn.style.display = "flex"; // Default state for larger screens
+      }
     }
-  }
   
-  // Call this function immediately when the script loads
-  updateVisibility();
+    // Call updateVisibility when the script loads
+    updateVisibility();
   
-  // Update visibility dynamically on window resize
-  window.addEventListener("resize", updateVisibility);
+    // Update visibility dynamically on window resize
+    window.addEventListener("resize", updateVisibility);
   
-  // Create an IntersectionObserver
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (window.innerWidth >= 1024) { // Only apply logic for wider screens
-        if (entry.isIntersecting) {
+    // IntersectionObserver for footer visibility
+    const footerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (window.innerWidth >= 1024) { // Only apply logic for larger screens
+            if (entry.isIntersecting) {
+              scrollToFooterBtn.style.display = "none"; // Hide when footer is visible
+            } else {
+              scrollToFooterBtn.style.display = "flex"; // Show otherwise
+            }
+          }
+        });
+      },
+      {
+        root: null, // Use the viewport as the root
+        threshold: 0.1, // Trigger when 10% of the footer is visible
+      }
+    );
+  
+    // Observe the footer
+    footerObserver.observe(footer);
+  
+    // IntersectionObserver for header visibility
+    const headerObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (window.innerWidth >= 1024) {
+          if (entry.isIntersecting) {
+            scrollToFooterBtn.style.display = "none"; // Hide when header is visible
+          } else {
+            scrollToFooterBtn.style.display = "flex"; // Show otherwise
+          }
+        }
+      },
+      {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of the header is visible
+      }
+    );
+  
+    // Observe the header
+    headerObserver.observe(header);
+  
+    // Function to hide button when scrolled to the bottom
+    function checkScrollPosition() {
+      if (window.innerWidth >= 1024) {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+  
+        if (scrollPosition >= documentHeight - 10) {
+          // Hide button when scrolled to the bottom
           scrollToFooterBtn.style.display = "none";
         } else {
+          // Show button when not at the bottom
           scrollToFooterBtn.style.display = "flex";
         }
       }
-    },
-    {
-      root: null, // Use the viewport as the root
-      threshold: 0.1, // Trigger when 10% of the header is visible
     }
-  );
   
-  // Observe the header
-  observer.observe(header);
+    // Add a scroll event listener to check the scroll position
+    window.addEventListener("scroll", checkScrollPosition);
+  });
   
