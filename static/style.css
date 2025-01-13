@@ -39,3 +39,26 @@
       transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px) {
+  /* Always show hover content on mobile */
+  #project-cards .group .relative .group-hover\:absolute {
+    position: relative !important;
+    opacity: 1 !important;
+  }
+
+  #project-cards .group .relative .group-hover\:opacity-0 {
+    opacity: 0 !important;
+  }
+
+  /* Disable transform effect for mobile */
+  #project-cards .group .relative {
+    transform: none !important;
+  }
+
+  /* Adjust padding and layout for better mobile spacing */
+  #project-cards .group .relative .p-6 {
+    position: relative;
+    opacity: 1 !important;
+  }
+}

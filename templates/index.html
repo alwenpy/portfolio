@@ -48,12 +48,13 @@
     </header>
 
     <!-- Floating Button -->
-    <div id="scrollToFooter" class="fixed transition bottom-24 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-full shadow-lg hover:from-blue-600 hover:to-blue-800 z-50 hidden lg:block">
+    <div id="scrollToFooter" class=" fixed lg:hidden transition bottom-24 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-full shadow-lg hover:from-blue-600 hover:to-blue-800 z-50  ">
       <a href="#footer">
         <span class="mr-2">↓</span>
         <span>looking for header?</span>
       </a>
     </div>
+    
     <div class="max-w-6xl mx-auto p-6">
       <section class="bg-center bg-no-repeat bg-blend-multiply h-screen flex items-center justify-center mb-8">
         <div class="px-4 mx-auto max-w-screen-xl text-center py-12 lg:py-24">
@@ -282,53 +283,157 @@
       <section id="projects" class="mb-16">
         <!-- Section Title -->
         <div class="flex items-center justify-between">
-          <h2 class="text-3xl font-semibold bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-2 rounded-lg shadow-lg mb-4">Projects</h2>
+          <h2 class="text-3xl font-semibold bg-gradient-to-r from-blue-500 to-blue-700 text-white px-3 py-2 rounded-lg shadow-lg mb-4">
+            Projects
+          </h2>
         </div>
+      
         <!-- Cards Container -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="project-cards">
-          <!-- Project Card -->
-          <a href="#" class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black">
+          <!-- Project Card 1 -->
+          <a
+            href="#"
+            class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black"
+          >
             <span class="absolute inset-0 border-2 border-dashed border-gray-700 rounded-lg"></span>
-            <div class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-              <!-- Initially Visible Content -->
-              <div class="p-6 transition-opacity group-hover:absolute group-hover:opacity-0">
-                <h3 class="text-xl font-bold sm:text-2xl">Educational Institute Website</h3>
+            <div
+              class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:hover:shadow-xl"
+            >
+              <!-- Mobile View: Always Show -->
+              <div class="p-4 sm:hidden">
+                <h3 class="text-base font-bold">
+                  <!-- Reduced font size for mobile -->
+                  Educational Institute Website
+                </h3>
+                <p class="mt-2 text-xs">
+                  <!-- Reduced font size for mobile -->
+                  This was my first project that was mentored by my cousin. It is a
+                  simple coaching institute website but I learned the basics on web
+                  development from this project. This project taught me the
+                  importance of errors. I learned how to debug and solve errors and
+                  that too in the Non-ChatGPT era.
+                </p>
               </div>
-              <!-- Hover Content -->
-              <div class="absolute p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
-                <h3 class="text-xl font-bold sm:text-2xl">Educational Institute Website</h3>
-                <p class="mt-4 text-sm sm:text-base">This was my first project that was mentored by my cousin. It is a simple coaching institute website but I learned the basics on web development from this project. This project taught me the imortance of errors. I learned how to debug and solve errors and that too in Non-ChatGPT era.</p>
+              <!-- Laptop View: Hover Effect -->
+              <div
+                class="hidden sm:block p-6 transition-opacity group-hover:absolute group-hover:opacity-0"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Educational Institute Website
+                </h3>
+              </div>
+              <div
+                class="absolute hidden sm:block p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Educational Institute Website
+                </h3>
+                <p class="mt-4 text-sm sm:text-base">
+                  This was my first project that was mentored by my cousin. It is a
+                  simple coaching institute website but I learned the basics on web
+                  development from this project. This project taught me the
+                  importance of errors. I learned how to debug and solve errors and
+                  that too in the Non-ChatGPT era.
+                </p>
               </div>
             </div>
           </a>
-
-          <a href="#" class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black">
+      
+          <!-- Repeat the above structure for each card -->
+          <!-- Project Card 2 -->
+          <a
+            href="#"
+            class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black"
+          >
             <span class="absolute inset-0 border-2 border-dashed border-gray-700 rounded-lg"></span>
-            <div class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-              <div class="p-6 transition-opacity group-hover:absolute group-hover:opacity-0">
-                <h3 class="text-xl font-bold sm:text-2xl">Vendor Management API</h3>
+            <div
+              class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:hover:shadow-xl"
+            >
+              <!-- Mobile View: Always Show -->
+              <div class="p-4 sm:hidden">
+                <h3 class="text-base font-bold">
+                  Vendor Management API
+                </h3>
+                <p class="mt-2 text-xs">
+                  A vendor management API that allows users to manage vendors,
+                  products, and orders. Built using Django Rest Framework and deployed
+                  on AWS. Also deployed a Postgres DB on RDS for data storage.
+                </p>
               </div>
-              <div class="absolute p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
-                <h3 class="text-xl font-bold sm:text-2xl">Vendor Management API</h3>
-                <p class="mt-4 text-sm sm:text-base">A vendor management API that allows users to manage vendors, products, and orders. Built using Django Rest Framework and deployed on AWS. Also deployed a Postgres DB on RDS for data storage.</p>
+              <!-- Laptop View: Hover Effect -->
+              <div
+                class="hidden sm:block p-6 transition-opacity group-hover:absolute group-hover:opacity-0"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Vendor Management API
+                </h3>
+              </div>
+              <div
+                class="absolute hidden sm:block p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Vendor Management API
+                </h3>
+                <p class="mt-4 text-sm sm:text-base">
+                  A vendor management API that allows users to manage vendors,
+                  products, and orders. Built using Django Rest Framework and deployed
+                  on AWS. Also deployed a Postgres DB on RDS for data storage.
+                </p>
               </div>
             </div>
           </a>
-
-          <a href="#" class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black">
+      
+          <!-- Project Card 3 -->
+          <a
+            href="#"
+            class="group relative block h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-gray-800 via-gray-900 to-black"
+          >
             <span class="absolute inset-0 border-2 border-dashed border-gray-700 rounded-lg"></span>
-            <div class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
-              <div class="p-6 transition-opacity group-hover:absolute group-hover:opacity-0">
-                <h3 class="text-xl font-bold sm:text-2xl">Real-Time Location Tracking</h3>
+            <div
+              class="relative flex h-full transform items-end border-2 border-gray-700 rounded-lg bg-pattern text-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 sm:hover:shadow-xl"
+            >
+              <!-- Mobile View: Always Show -->
+              <div class="p-4 sm:hidden">
+                <h3 class="text-base font-bold">
+                  Real-Time Location Tracking
+                </h3>
+                <p class="mt-2 text-xs">
+                  Out of curiosity to learn Kafka and to know how the location of
+                  Zomato/Swiggy/Uber drivers is tracked, I built a real-time location
+                  tracker using Django, Kafka, and Google Maps API, visualizing
+                  updates every 5 seconds. Deployed on Railway.app and managed Kafka
+                  with Aiven for scalable streaming. I'm not good at frontend, so
+                  only console output is the UI.
+                </p>
               </div>
-              <div class="absolute p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100">
-                <h3 class="text-xl font-bold sm:text-2xl">Real-Time Location Tracking</h3>
-                <p class="mt-4 text-sm sm:text-base">Out of curiosity to learn Kafka and to know how the location of Zomato/Swiggy/Uber drivers is tracked, I Built a real-time location tracker using Django, Kafka, and Google Maps API, visualizing updates every 5 seconds. Deployed on Railway.app and managed Kafka with Aiven for scalable streaming. I'm not good at frontend, so only console output is the UI.</p>
+              <!-- Laptop View: Hover Effect -->
+              <div
+                class="hidden sm:block p-6 transition-opacity group-hover:absolute group-hover:opacity-0"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Real-Time Location Tracking
+                </h3>
+              </div>
+              <div
+                class="absolute hidden sm:block p-6 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100"
+              >
+                <h3 class="text-xl font-bold sm:text-2xl">
+                  Real-Time Location Tracking
+                </h3>
+                <p class="mt-4 text-sm sm:text-base">
+                  Out of curiosity to learn Kafka and to know how the location of
+                  Zomato/Swiggy/Uber drivers is tracked, I built a real-time location
+                  tracker using Django, Kafka, and Google Maps API, visualizing
+                  updates every 5 seconds. Deployed on Railway.app and managed Kafka
+                  with Aiven for scalable streaming. I'm not good at frontend, so
+                  only console output is the UI.
+                </p>
               </div>
             </div>
           </a>
         </div>
       </section>
+      
     </div>
 
     <!-- Footer -->
